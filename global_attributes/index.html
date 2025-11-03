@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Attributes Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: linear-gradient(to right, #f0f4ff, #e3ffe7);
+    }
+    header, footer, article, section, nav, aside {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 10px;
+      background-color: white;
+    }
+    .highlight {
+      background-color: yellow;
+    }
+    [hidden] {
+      display: none;
+    }
+  </style>
+</head>
+<body id="mainBody" class="page-body" data-theme="light" title="Hover text for body">
+
+  <header id="siteHeader" class="highlight" style="text-align:center;" lang="en" data-info="Header Section">
+    <h1 title="Main Site Title">Welcome to the Global Attributes Demo</h1>
+    <nav id="mainNav" tabindex="1" data-role="navigation">
+      <a href="#article1" title="Go to Article 1" style="margin-right: 10px;">Article 1</a>
+      <a href="#section2" title="Go to Section 2">Section 2</a>
+    </nav>
+  </header>
+
+  <main id="content" class="content-area" contenteditable="true" data-edit="true" title="You can edit this area!">
+    <article id="article1" lang="en" draggable="true" data-category="education" style="background-color:#eef;">
+      <h2 class="highlight" title="Article heading">Article 1: Introduction</h2>
+      <p id="introText" data-info="first paragraph">
+        This <strong>article</strong> shows how global attributes like <code>id</code>, <code>class</code>, <code>style</code>,
+        <code>title</code>, <code>lang</code>, <code>data-*</code>, and <code>contenteditable</code> can be used across elements.
+      </p>
+      <img src="https://via.placeholder.com/150" alt="Placeholder image" id="sampleImage" data-purpose="demo" draggable="false" title="Example image">
+      <br>
+      <button id="clickBtn" class="highlight" title="Click me" data-action="alert" onclick="alert('Button clicked!')" tabindex="2">
+        Click Me
+      </button>
+    </article>
+
+    <section id="section2" data-section="info" hidden>
+      <h3 title="Hidden section heading">Section 2: Hidden Content</h3>
+      <p>This section is hidden using the <code>hidden</code> global attribute.</p>
+    </section>
+
+    <section id="section3" class="info-block" style="border-color: teal;" lang="fr" tabindex="3" title="French section" data-lang="fr">
+      <h3>Section 3: Contenu en Français</h3>
+      <p>Bonjour! Ceci est une section en français démontrant l’attribut <code>lang</code>.</p>
+    </section>
+  </main>
+
+  <aside id="sideNote" class="highlight" data-position="right" contenteditable="true" title="Editable sidebar">
+    <h4>Side Note</h4>
+    <p>You can <em>edit</em> this text. This area uses <code>contenteditable</code>!</p>
+  </aside>
+
+  <footer id="pageFooter" class="footer" data-year="2025" title="Footer area">
+    <p>&copy; 2025 Global Attributes Demo. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("clickBtn").addEventListener("mouseover", function() {
+      this.style.backgroundColor = "lightgreen";
+    });
+    document.getElementById("clickBtn").addEventListener("mouseout", function() {
+      this.style.backgroundColor = "";
+    });
+  </script>
+
+</body>
+</html>
